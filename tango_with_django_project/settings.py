@@ -82,3 +82,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Template paths
+TEMPLATE_DIRS = ('<workspace>/tango_with_django_project/',)
