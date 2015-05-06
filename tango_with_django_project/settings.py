@@ -84,4 +84,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Template paths
-TEMPLATE_DIRS = ('<workspace>/tango_with_django_project/',)
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
+TEMPLATE_DIRS = (TEMPLATE_PATH,)
