@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from rango.models import Category
+# from django.http import HttpResponse
+from rango.models import Category, Page
 
 
 def index(request):
@@ -11,3 +11,15 @@ def index(request):
 
 def about(request):
     return render(request, 'rango/about.html')
+
+
+def category(request, category_name_slug):
+    context_dict = {}
+    try:
+        category = Category.objects.get(slug=category_name_slug)
+        context_dict['category'] = category
+        pages = Page.objects.filter(category=category)
+        context_dict['pages'] = pages
+    except Category.DoesNotExist:
+        pass
+    return render(request, 'rango/category.html', context_dict)
