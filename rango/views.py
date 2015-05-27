@@ -97,8 +97,8 @@ def register(request):
 
 def user_login(request):
     if request.method == 'POST':
-        username = request.get('username')
-        password = request.get('password')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
         user = authenticate(username=username, password=password)
 
         if user:
