@@ -16,14 +16,14 @@
 	<div>
 		<ul>
 		{% if user.is_authenticated %}
-			<li><a href="/rango/add_category/">Add a New Category</a><br /></li>
-		    <li><a href="/rango/logout/">Logout</a><br /></li>
-		    <li><a href="/rango/restricted/">Restricted Page</a><br /></li>
+			<li><a href="{% url 'add_category' %}">Add a New Category</a><br /></li>
+		    <li><a href="{% url 'logout' %}">Logout</a><br /></li>
+		    <li><a href="{% url 'restricted' %}">Restricted Page</a><br /></li>
 	    {% else %}
-		    <li><a href="/rango/register/">Register Here</a><br /></li>
-		    <li><a href="/rango/login/">Login</a><br /></li>
+		    <li><a href="{% url 'register' %}">Register Here</a><br /></li>
+		    <li><a href="{% url 'login' %}">Login</a><br /></li>
 		{% endif %}
-			<li><a href="/rango/about/">About</a><br/></li>
+			<li><a href="{% url 'about' %}">About</a><br/></li>
 
 		</ul>
 	</div>
