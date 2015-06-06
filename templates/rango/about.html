@@ -5,7 +5,10 @@
 {% block title %}Rango - About{% endblock %}
 
 {% block body_block %}
-	Rango says here is the about page.<br/>
-	<img src="{% static "images/image2.jpg" %}" alt="Pictures of about">
+	<div class="page-header">
+		<h1>About</h1>
+	</div>
+	<p>Rango says here is the <strong>about</strong> page.</p><br/>
+	<img width="600" height="400" src="{% static "images/image2.jpg" %}" alt="Pictures of about">
 
 {% endblock %}
