@@ -13,7 +13,7 @@ class PageAdmin(admin.ModelAdmin):
         ('URL', {'fields': ['url']}),
         ('Views', {'fields': ['views']}),
     ]
-    list_display = ('title', 'category', 'url', 'views')
+    list_display = ('title', 'category', 'url', 'views', 'slug')
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Page, PageAdmin)

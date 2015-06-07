@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rango.models import Category, Page
 from rango.forms import CategoryForm, PageForm
 from django.http import HttpResponseRedirect, HttpResponse
@@ -96,3 +96,16 @@ def add_page(request, category_name_slug):
 @login_required
 def restricted(request):
     return HttpResponse("Since you're logged in, you can see this text!")
+
+
+def track_url(request):
+    if request.method == 'GET':
+        if 'page_id' in request.GET:
+            page_id = request.GET['page_id']
+            try:
+                page = Page.objects.get(slug=page_id)
+                page.views += 1
+                page.save()
+                return redirect(page.url)
+            except Category.DoesNotExist:
+                return HttpResponseRedirect('/rango/')
