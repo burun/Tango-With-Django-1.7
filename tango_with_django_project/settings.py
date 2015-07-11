@@ -24,7 +24,11 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '.finndict.com',
+    '.finndict.com.',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -62,8 +66,12 @@ WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': '94wBxIxJZh',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
